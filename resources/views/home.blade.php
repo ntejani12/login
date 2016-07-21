@@ -13,6 +13,9 @@
    				@if (App\Http\Controllers\AdminController::isAdmin())
 					<div class="panel-body">
                     	<a href="{{ route('userlist') }}">User List</a>
+
+                        <div class="panel-body">
+                        <a href="{{ route('courselist') }}">Course List</a>
                 	</div>
 				@endif
             </div>

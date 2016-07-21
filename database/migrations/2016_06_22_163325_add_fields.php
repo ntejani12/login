@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFieldsToUsersTable extends Migration
+class AddFields extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,17 @@ class AddFieldsToUsersTable extends Migration
      */
     public function up()
     {
+        //
         Schema::table('users', function (Blueprint $table) {
+            //$table->increments('id');
             $table->string('address');
-	    $table->string('city');
-     	    $table->string('state');
-	    $table->string('zip');
-	    $table->string('day');
-	    $table->string('month');
-	    $table->string('year');
-	    $table->string('phone');
+            $table->string('city');
+            $table->string('state');
+            $table->string('zip');
+            $table->string('month');
+            $table->string('day');
+            $table->string('year');
+            $table->string('phone');
         });
     }
 
@@ -31,8 +33,6 @@ class AddFieldsToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        //
     }
 }

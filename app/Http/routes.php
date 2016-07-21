@@ -36,6 +36,7 @@ Route::group(['middleware'=>'admin'], function(){
 	}]);
 
 
+
 	Route::get('/admin/user/{idedit}', ['as' => 'adminview', function($idedit){
 		return view('admin/adminuserview', ['idedit' => $idedit]);
 	}]);
@@ -59,4 +60,28 @@ Route::group(['middleware'=>'admin'], function(){
 Route::get('/403', function(){
 	return view('403');
 });
+
+
+	Route::get('/admin/courselist', ['as' => 'courselist', function(){
+		return view('admin/courselist');
+	}]);
+
+	Route::get('/admin/newcourse', ['as' => 'newcourse', function(){
+		return view('admin/newcourse');
+	}]);
+
+	Route::post('/admin/newcourse', ['as' => 'newcourse', 'uses'=>'AdminController@newCourse']);
+
+	Route::get('/admin/editcourse/{idcourse}', ['as' => 'courseedit', function($idcourse){
+		return view('admin/courseedit', ['idcourse' => $idcourse]);
+	}]);
+
+	Route::post('/admin/editcourse/edit', ['as' => 'courseeditaction', 'uses'=>'AdminController@editCourse']);
+
+	Route::post('courseview', ['uses'=>'Course\AdminController@editCourseForm']);
+	Route::get('/admin/courseedit/{idcourse}', function($idcourse){
+		return view('course/courseedit', ['idcourse' => $idcourse]);
+	});
+
+	
 

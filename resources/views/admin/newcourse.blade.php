@@ -156,13 +156,41 @@
                                 @endfor
                             </tr>
 
-                                <tr>
+                            <tr>
                                 <td>Handicap</td>
                                 @for ($i = 1; $i <= 18; $i++)
                                 <td><input type="text" size ="2" name="{{'handicap' . $i}}" value="{{old('hdcp' . $i)}}"></td>
                                 @endfor
                                 <td></td>
-                                </tr>
+                            </tr>
+
+                            <tr>
+
+                            <td><input type="text" size ="5" name="{{'color1'}}" value="{{old('color1')}}"></td>
+                            </tr>
+
+                             <tr>
+
+                            <td><input type="text" size ="5" name="{{'color2'}}" value="{{old('color2')}}"></td>
+                            </tr>
+
+                             <tr>
+
+                            <td><input type="text" size ="5" name="{{'color3'}}" value="{{old('color3')}}"></td>
+                            </tr>
+
+                             <tr>
+
+                            <td><input type="text" size ="5" name="{{'color4'}}" value="{{old('color4')}}"></td>
+                            </tr>
+                             <tr>
+
+                            <td><input type="text" size ="5" name="{{'color5'}}" value="{{old('color5')}}"></td>
+                            </tr>
+                             <tr>
+
+                            <td><input type="text" size ="5" name="{{'color6'}}" value="{{old('color6')}}"></td>
+                            </tr>
 
                         </table>
                          

@@ -9,6 +9,22 @@
 					<font color="green">{{Session::get('adminReset')}}</font>
 				</div>
 			@endif
+
+			{!! Form::open(['route' => 'courselist', 'method' => 'GET', 'class' => 'navbar-form navbar-right', 'role' => 'search']) !!}
+			<!-- <form action ="" class="navbar-form navbar-right" role="search"> -->
+				<div class="input-group">
+				{!! Form::text('term', Request::get('term'), ['class' => 'form-control', 'placeholder' => 'Search...']) !!}
+				<!--<input type="text" name = "term" id="term" class="form-control" placeholder="Search..."> -->
+				<span class="input-group-btn">
+				<button class ="btn btn-default" type="submit">
+					<i class="glyphicon glyphicon-search"></i>
+				</button>
+				</span>
+				</div>
+
+				{!! Form::close() !!}
+			<!--</form> -->
+
             <div class="panel panel-default">
                 <div class="panel-heading">Courses</div>
 				<div class="panel-body">

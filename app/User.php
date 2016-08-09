@@ -25,6 +25,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function players()
+    {
+        return $this->hasMany('App\Player');
+    }
+
 
  	/*public static function getUserByID($id){
 		$useredit = array();	

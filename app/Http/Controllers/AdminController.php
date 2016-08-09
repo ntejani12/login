@@ -440,4 +440,15 @@ class AdminController extends Controller
 			$idcourse = $request->input('editcourse');
 			return redirect('/admin/courseedit/{$idcourse}');
 		}*/
+
+		public function index(Request $request) {
+
+			if (($term = $request->get('term'))){
+				$query->orWhere('name', 'like', '%' .$term . '%');
+				$query->orWhere('city', 'like', '%' .$term . '%');
+			}
+
+			return view('courselist');
+		}
+
 }

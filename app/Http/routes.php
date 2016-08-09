@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::auth();
 
+
+
 Route::get('/home', 'HomeController@index');
 
 Route::get('/profile', function(){
@@ -72,16 +74,31 @@ Route::get('/403', function(){
 
 	Route::post('/admin/newcourse', ['as' => 'newcourse', 'uses'=>'AdminController@newCourse']);
 
+	Route::get('/addplayer', function(){
+		return view('addplayer');
+	});
+
+	Route::post('/addplayer', ['as' => 'addplayer', 'uses'=>'PlayerController@addplayer']);
+	
 	Route::get('/admin/editcourse/{idcourse}', ['as' => 'courseedit', function($idcourse){
 		return view('admin/courseedit', ['idcourse' => $idcourse]);
 	}]);
 
 	Route::post('/admin/editcourse/edit', ['as' => 'courseeditaction', 'uses'=>'AdminController@editCourse']);
 
-	Route::post('courseview', ['uses'=>'Course\AdminController@editCourseForm']);
+	//Route::post('courseview', //['uses'=>'Course\AdminController@editCourseForm']);
+
 	Route::get('/admin/courseedit/{idcourse}', function($idcourse){
 		return view('course/courseedit', ['idcourse' => $idcourse]);
 	});
 
 	
+	Route::post('/admin/courselist', ['as' => 'courselist', 'uses' => 'AdminController@index']);
+
+	Route::get('/home/{idplayer}', ['as' => 'playeredit', function($idplayer){
+		return view('/playeredit', ['idplayer' => $idplayer]);
+	}]);
+
+	Route::post('/editplayer/edit', ['as' => 'playereditaction', 'uses'=>'PlayerController@editPlayer']);
+
 

@@ -33,10 +33,10 @@ class CourseController extends Controller
 
 
         return Course::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            //'password' => bcrypt($data['password']),
-	       'address'=> $data['address'],
+        'name' => $data['name'],
+        'email' => $data['email'],
+        //'password' => bcrypt($data['password']),
+	   'address'=> $data['address'],
 		'city'=> $data['city'],
 		'state'=> $data['state'],
 		'zip'=> $data['zip'],
